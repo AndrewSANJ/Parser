@@ -13,13 +13,10 @@ fun main() {
 
     println("Цитаты с первой страницы: ")
 
-    val quotes = doc.select(".sc-2aegk7-2")
+    val quotes = doc.select("article div div div")
 
-    var number = 1
-
-    for (quote in quotes) {
-
-        println("${number++} - ${quote.text()}")
+    quotes.forEachIndexed { i, e ->
+        println("${i + 1} - ${e.text()}")
     }
 
 
